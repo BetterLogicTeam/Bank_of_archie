@@ -6,6 +6,7 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { BsMoon } from "react-icons/bs";
 import { FiSun } from "react-icons/fi";
+import { loadWeb3 } from '../apis/api';
 
 function MyVerticallyCenteredModal(props) {
     return (
@@ -15,8 +16,8 @@ function MyVerticallyCenteredModal(props) {
         aria-labelledby="contained-modal-title-vcenter"
         centered
       >
-        {/* <Modal.Header closeButton> */}
-        {/* </Modal.Header> */}
+        <Modal.Header closeButton>
+        </Modal.Header>
         <Modal.Body>
           <span className="sc-eCbnUT dUrPfY">
             <div className="sc-eEVmNe ceRJCx" style={{padding: "1rem"}}>
@@ -126,8 +127,8 @@ function MyVerticallyCenteredModal(props) {
         aria-labelledby="contained-modal-title-vcenter"
         centered
       >
-        {/* <Modal.Header closeButton> */}
-        {/* </Modal.Header> */}
+        <Modal.Header closeButton>
+        </Modal.Header>
         <Modal.Body>
           <span className="sc-eCbnUT dUrPfY">
             <div className="sc-eEVmNe ceRJCx" style={{padding: "1rem"}}>
@@ -505,33 +506,15 @@ function Landing() {
       </Button>
 
 
-      {/* <MyVerticallyCenteredModal2
+      <MyVerticallyCenteredModal2
         show={modalShow2}
         onHide={() => setModalShow2(false)}
       /> */}
-            </span>
-             </button>
-              </div>
-                </div>
-            <div className="exchange_arrow">
-                <div className="sc-bdnxRM  my-3 sc-gKAaRy sc-pNWdM fzUdiI gtRDRy hEuxWI" onClick={() => setValue1(true)}>
-                  <div className="move sc-ecQkzk ggFzum">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#565A69" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <line x1="12" y1="5" x2="12" y2="19">
-                        </line>
-                        <polyline points="19 12 12 19 5 12"></polyline>
-                        </svg>
-                        </div>
-                        </div>
-            </div>
-            <div className="second sc-clGGWX dSShbu">
-              <div className="sc-fiCYzP ftghdH">
-                <div className="sc-bdnxRM sc-gKAaRy sc-iCoGMd fzUdiI fHYJrX kMthTr">
-                  <div className="sc-jJMGnK bXUIQO css-1rhdhic">To</div>
-                  </div>
-                  </div>
-                  <div className="sc-biHcxt jLSnqi">
-                    <input className="sc-ByBTK tIUQu token-amount-input" inputmode="decimal" title="Token Amount" autocomplete="off" autocorrect="off" type="text" pattern="^[0-9]*[.,]?[0-9]*$" placeholder="0.0" minlength="1" maxlength="79" spellcheck="false" value=""/>
+            </span></button></div></div>
+                                        <div className="exchange_arrow">
+                                            <div className="sc-bdnxRM  my-3 sc-gKAaRy sc-pNWdM fzUdiI gtRDRy hEuxWI" onClick={() => setValue1(true)}><div className="move sc-ecQkzk ggFzum"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#565A69" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg></div></div>
+                                        </div>
+                                        <div className="second sc-clGGWX dSShbu"><div className="sc-fiCYzP ftghdH"><div className="sc-bdnxRM sc-gKAaRy sc-iCoGMd fzUdiI fHYJrX kMthTr"><div className="sc-jJMGnK bXUIQO css-1rhdhic">To</div></div></div><div className="sc-biHcxt jLSnqi"><input className="sc-ByBTK tIUQu token-amount-input" inputmode="decimal" title="Token Amount" autocomplete="off" autocorrect="off" type="text" pattern="^[0-9]*[.,]?[0-9]*$" placeholder="0.0" minlength="1" maxlength="79" spellcheck="false" value=""/>
             <button className="sc-hfVBHA cyFpBV open-currency-select-button">
             <Button variant="" onClick={() => setModalShow3(true)}>
             <span className="sc-lfRxJW hoeYaZ">
@@ -543,13 +526,11 @@ function Landing() {
                 </span>
       </Button>
 
-   {/* <MyVerticallyCenteredModal3
+   <MyVerticallyCenteredModal3
         show={modalShow3}
         onHide={() => setModalShow3(false)}
       /> */}
-                </button>
-                </div>
-                </div>
+                </button></div></div>
 
               </>
               :
@@ -572,36 +553,17 @@ function Landing() {
                    </span>
       </Button>
 
-   {/* <MyVerticallyCenteredModal3
+   <MyVerticallyCenteredModal3
         show={modalShow3}
         onHide={() => setModalShow3(false)}
       /> */}
-                </button>
-                   </div>
-                     </div>
-              <div className="exchange_arrow">
-                  <div className="sc-bdnxRM  my-3 sc-gKAaRy sc-pNWdM fzUdiI gtRDRy hEuxWI" onClick={() => setValue1(false)}>
-                    <div className="move sc-ecQkzk ggFzum">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#565A69" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="12" y1="5" x2="12" y2="19"></line>
-                        <polyline points="19 12 12 19 5 12"></polyline>
-                        </svg>
-                        </div>
-                        </div>
-              </div>
-              <div className="first sc-clGGWX dSShbu">
-                <div className="sc-fiCYzP ftghdH">
-                  <div className="sc-bdnxRM sc-gKAaRy sc-iCoGMd fzUdiI fHYJrX kMthTr">
-                    <div className="sc-jJMGnK bXUIQO css-1rhdhic">From</div>
-                    </div>
-                    </div>
-                    <div className="sc-biHcxt jLSnqi">
-                      <input className="sc-ByBTK tIUQu token-amount-input" inputmode="decimal" title="Token Amount" autocomplete="off" autocorrect="off" type="text" pattern="^[0-9]*[.,]?[0-9]*$" placeholder="0.0" minlength="1" maxlength="79" spellcheck="false" value=""/>
-      <button className="max sc-hfVBHA cyFpBV open-currency-select-button">
-        <span className="sc-lfRxJW hoeYaZ">MAX</span>
-        </button>
-            <button className="sc-hfVBHA cyFpBV open-currency-select-button">
-              <span className="sc-lfRxJW hoeYaZ">
+                </button></div></div>
+                                        <div className="exchange_arrow">
+                                            <div className="sc-bdnxRM  my-3 sc-gKAaRy sc-pNWdM fzUdiI gtRDRy hEuxWI" onClick={() => setValue1(false)}><div className="move sc-ecQkzk ggFzum"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#565A69" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg></div></div>
+                                        </div>
+                                        <div className="first sc-clGGWX dSShbu"><div className="sc-fiCYzP ftghdH"><div className="sc-bdnxRM sc-gKAaRy sc-iCoGMd fzUdiI fHYJrX kMthTr"><div className="sc-jJMGnK bXUIQO css-1rhdhic">From</div></div></div><div className="sc-biHcxt jLSnqi"><input className="sc-ByBTK tIUQu token-amount-input" inputmode="decimal" title="Token Amount" autocomplete="off" autocorrect="off" type="text" pattern="^[0-9]*[.,]?[0-9]*$" placeholder="0.0" minlength="1" maxlength="79" spellcheck="false" value=""/>
+      <button className="max sc-hfVBHA cyFpBV open-currency-select-button"><span className="sc-lfRxJW hoeYaZ">MAX</span></button>
+            <button className="sc-hfVBHA cyFpBV open-currency-select-button"><span className="sc-lfRxJW hoeYaZ">
             <Button variant="" onClick={() => setModalShow2(true)}>
             <img src={swap} className="sc-kizEQm qRAyn"/>
             <span className="sc-kJNqyW dAolHO token-symbol-container">ARC</span>
@@ -611,14 +573,11 @@ function Landing() {
       </Button>
 
 
-      {/* <MyVerticallyCenteredModal2
+      <MyVerticallyCenteredModal2
         show={modalShow2}
         onHide={() => setModalShow2(false)}
       /> */}
-            </span>
-              </button>
-                </div>
-                  </div>
+            </span></button></div></div>
 
 
                                     </>
@@ -635,24 +594,14 @@ function Landing() {
                   <div className="sc-eEVmNe jpVwse" style={{padding: "3px 4px"}}>
                     <div className="sc-bdnxRM sc-gKAaRy sc-iCoGMd fzUdiI fHYJrX kMthTr">
                 <Button variant="" onClick={() => setModalShow(true)}>
-                <div className="sc-dYXZXt gRxzFx css-1rhdhic">Slippage Tolerance</div>
+                {/* <div className="sc-dYXZXt gRxzFx css-1rhdhic">Owner Fee</div> */}
             </Button>
       
             {/* <MyVerticallyCenteredModal
               show={modalShow}
               onHide={() => setModalShow(false)}
             /> */}
-                    <div className="sc-dYXZXt gRxzFx css-1rhdhic">0.5%</div>
-                      </div>
-                        </div>
-                          </div>
-                            </div>
-                    <div className="sc-iXquSf bwRbQ">
-                      <button className="sc-bdnxRM bhVlig sc-kEqXSa sc-iqAclL hAmzBT iSuonF">Swap</button>
-                         </div>
-                            </div>
-                              </div>
-                                </div>
+                    <div className="sc-dYXZXt gRxzFx css-1rhdhic">0.5%</div></div></div></div></div><div className="sc-iXquSf bwRbQ"><button className="sc-bdnxRM bhVlig sc-kEqXSa sc-iqAclL hAmzBT iSuonF">Swap</button></div></div></div></div>
     </div>
   )
 }
