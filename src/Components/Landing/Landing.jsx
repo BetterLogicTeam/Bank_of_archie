@@ -6,7 +6,7 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { BsMoon } from "react-icons/bs";
 import { FiSun } from "react-icons/fi";
-import { loadWeb3 } from '../apis/api';
+// import { loadWeb3 } from '../apis/api';
 
 function MyVerticallyCenteredModal(props) {
     return (
@@ -506,10 +506,10 @@ function Landing() {
       </Button>
 
 
-      <MyVerticallyCenteredModal2
+      {/* <MyVerticallyCenteredModal2
         show={modalShow2}
         onHide={() => setModalShow2(false)}
-      /> */}
+      />  */}
             </span></button></div></div>
                                         <div className="exchange_arrow">
                                             <div className="sc-bdnxRM  my-3 sc-gKAaRy sc-pNWdM fzUdiI gtRDRy hEuxWI" onClick={() => setValue1(true)}><div className="move sc-ecQkzk ggFzum"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#565A69" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg></div></div>
@@ -526,10 +526,10 @@ function Landing() {
                 </span>
       </Button>
 
-   <MyVerticallyCenteredModal3
+   {/* <MyVerticallyCenteredModal3
         show={modalShow3}
         onHide={() => setModalShow3(false)}
-      /> */}
+      />  */}
                 </button></div></div>
 
               </>
@@ -553,10 +553,10 @@ function Landing() {
                    </span>
       </Button>
 
-   <MyVerticallyCenteredModal3
+   {/* <MyVerticallyCenteredModal3
         show={modalShow3}
         onHide={() => setModalShow3(false)}
-      /> */}
+      />  */}
                 </button></div></div>
                                         <div className="exchange_arrow">
                                             <div className="sc-bdnxRM  my-3 sc-gKAaRy sc-pNWdM fzUdiI gtRDRy hEuxWI" onClick={() => setValue1(false)}><div className="move sc-ecQkzk ggFzum"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#565A69" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg></div></div>
@@ -573,10 +573,10 @@ function Landing() {
       </Button>
 
 
-      <MyVerticallyCenteredModal2
+      {/* <MyVerticallyCenteredModal2
         show={modalShow2}
         onHide={() => setModalShow2(false)}
-      /> */}
+      />  */}
             </span></button></div></div>
 
 
