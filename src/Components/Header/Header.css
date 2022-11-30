@@ -1,0 +1,25 @@
+.Header_main{
+    padding: 15px 0px;
+}
+
+body{
+    background: linear-gradient(to right,#E1E7EC);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+.Header_btn{
+    background-color:#205721 ;
+    border: none;
+    outline: none;
+    padding: 10px 15px ;
+    color: white;
+    border-radius:10px ;
+}
+
+.Header_btn:hover{
+    background-color: transparent !important;
+        border:2px solid rgb(5, 55, 5);
+        font-weight: bold;
+}
