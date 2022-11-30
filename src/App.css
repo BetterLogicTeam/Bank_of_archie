@@ -36,3 +36,179 @@
     transform: rotate(360deg);
   }
 }
+
+
+:root{
+  --bdy_dark: radial-gradient(50% 50% at 50% 50%, rgba(39, 146, 214, 0.2) 0%, rgba(29, 31, 36, 0) 100%);
+  --bdy_dark_clr: rgb(39,41,46);
+  --bdy_light: radial-gradient(50% 50% at 50% 50%, rgba(39, 146, 214, 0.2) 0%, rgba(250, 250, 250, 0) 100%);
+  --bdy_light_clr: rgb(237,237,237);
+  --mid_light: rgb(250, 250, 250);
+  --mid_dark: rgb(29,31,36);
+  --btttn: rgb(58,61,71);
+  --btn_clr: white;
+  --bs-btn-color: white;
+  --bs-btn-color_2: #212529;
+  --walet_light: black;
+  --walet_dark: white;
+  --arrw_light: black;
+  --arrw_dark: white;
+  --swap_light: rgb(0, 0, 0);
+  --swap_dark: white;
+  --bgggg: black;
+  --from: rgb(224, 230, 247);
+  --setting: white;
+  --modeal: rgb(39,41,46);
+  --modeal_btttn: rgb(29,31,36);
+  --bluee: rgb(39, 146, 214);
+  --bg_nn: none;
+  --modeal_content: #1D1F24;
+  --modeal_teext: rgb(202, 192, 192);
+  --close: url(./Assets/cross-removebg-preview.png);
+  --hovear: #222429;
+}
+
+
+.dark_theme .css-1pnt2fu{
+  color: var(--modeal_teext) !important;
+}
+
+.dark_theme .hooveer:hover{
+  background-color: var(--hovear) !important;
+}
+
+.dark_theme .gBldzM{
+  background-color: var(--setting) !important;
+}
+
+.dark_theme .css-x9zcw6{
+  color: var(--setting) !important;
+}
+
+.dark_theme .modal-content{
+  background-color: var(--modeal_content) !important;
+  color: var(--setting) !important;
+}
+
+.dark_theme .btn-close{
+  color: var(--setting) !important;
+  background-image: var(--close) !important;
+}
+
+.dark_theme .dKBgpN{
+  background-color: var(--bg_nn) !important;
+}
+
+.dark_theme .bCZoQs{
+  color: var(--setting) !important;
+}
+
+.dark_theme .dUrPfY{
+  background-color: var(--modeal) !important;
+  color: var(--setting) !important;
+}
+
+.dark_theme .bCZoQs{
+  background-color: var(--modeal_btttn) !important;
+}
+
+.dark_theme .HfXha{
+  background-color: var(--modeal_btttn) !important;
+  color: var(--setting) !important;
+}
+
+.light_theme .kxYBWW{
+  background-color: var(--bluee) !important;
+}
+
+.dark_theme .kxYBWW{
+  background-color: var(--bluee) !important;
+}
+
+.light_theme .maain{
+  background: var(--bdy_light) !important;
+  background-color: var(--bdy_light_clr) !important;
+}
+
+.dark_theme .maain{
+  background: var(--bdy_dark) !important;
+  background-color: var(--bdy_dark_clr) !important;
+}
+
+.light_theme .DCgcf{
+  background-color: var(--mid_light) !important;
+}
+
+.dark_theme .DCgcf{
+  background-color: var(--bdy_dark_clr) !important;
+}
+
+.light_theme .dqgKzp{
+  background-color: var(--mid_light) !important;
+}
+
+.dark_theme .dqgKzp{
+  background-color: var(--bdy_dark_clr) !important;
+}
+
+.dark_theme .tIUQu{
+  background-color: var(--bdy_dark_clr) !important;
+}
+
+.dark_theme .cyFpBV{
+  background-color: var(--btttn) !important;
+  color: var(--btn_clr);
+}
+
+.light_theme .btn{
+  color: var(--bs-btn-color_2) !important;
+}
+
+.dark_theme .btn{
+  color: var(--bs-btn-color) !important;
+}
+
+.light_theme .wallet{
+   color: var(--walet_light) !important;
+}
+
+.dark_theme .wallet{
+  color: var(--walet_dark) !important;
+}
+
+.light_theme .eDmepi path{
+  stroke: var(--arrw_light) !important;
+}
+
+
+.dark_theme .eDmepi path{
+  stroke: var(--arrw_dark) !important;
+}
+
+.light_theme .iJQSkR{
+  color: var(--swap_light) !important;
+}
+
+.dark_theme .iJQSkR{
+  color: var(--swap_dark) !important;
+}
+
+.dark_theme .bggg{
+  background-color: var(--bdy_dark_clr) !important;
+}
+
+.dark_theme .giFUhe.ACTIVE{
+  color: var(--swap_dark) !important;
+  background-color: var(--btttn) !important;
+}
+
+.dark_theme .css-1qqnh8x{
+  color: var(--from) !important;
+}
+
+.dark_theme .bRRHuO > *{
+  stroke: var(--setting) !important;
+}
+
+/* rgb(195, 197, 203) */
+/* .css-1qqnh8x */

@@ -246,7 +246,7 @@ a {
 }
 
 .jeiBZJ svg {
-    margin-top: 2px;
+    margin-top: -10px;
 }
 
 .jeiBZJ > * {
@@ -482,6 +482,11 @@ a {
     border-radius: 20px;
     background-color: rgb(250, 250, 250);
     z-index: 1;
+}
+
+.btn {
+    --bs-btn-padding-x: 5px !important;
+    --bs-btn-color:white !important;
 }
 
 .dSShbu {
@@ -1105,8 +1110,18 @@ a {
         font-size: 12px;
     }
 
-    .cyFpBV{
-        /* padding: 0 !important; */
+    .dAolHO{
+        margin: 0px;
+    }
+
+    .dAolHO{
+        font-size: 15px;
+    }
+
+    .qRAyn{
+        width: 16px;
+        height: 16px;
+        margin-top: -5px;
     }
 
     /* .jeiBZJ{
@@ -1121,5 +1136,25 @@ a {
 @media (min-width:481px) and (max-width:768px) {
     .jSTRnN img{
         width: 190px;
+    }
+}
+
+@media (min-width:376px) and (max-width:425px) {
+    .dVRMhB{
+        margin-left: 39px;
+    }
+}
+
+@media screen and (max-width:320px) {
+    .bhVlig{
+        font-size: 10px;
+    }
+
+    .fs-4{
+        font-size: 12px !important;
+    }
+
+    .dAolHO{
+        font-size: 13px;
     }
 }

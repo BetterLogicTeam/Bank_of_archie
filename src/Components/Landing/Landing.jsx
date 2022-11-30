@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import "./Landing.css";
 import logo from '../../Assets/logo.png';
 import swap from '../../Assets/swap.png';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import { BsMoon } from "react-icons/bs";
+import { FiSun } from "react-icons/fi";
 
 function MyVerticallyCenteredModal(props) {
     return (
@@ -99,11 +101,34 @@ function Landing() {
     const [modalShow2, setModalShow2] = React.useState(false);
     const [modalShow3, setModalShow3] = React.useState(false);
     const [modalShow4, setModalShow4] = React.useState(false);
-    const [value1, setValue1] = React.useState(false)
+    const [value1, setValue1] = React.useState(false);
+
+    const [theme, setTheme] = useState("light_theme");
+    const [iaDark, setIaDark] = useState(false);
+
+
+    const toggleTheme = () => {
+      if (theme === "dark_theme") {
+        setTheme("light_theme")
+        setIaDark(!iaDark)
+        
+      }else{
+        setTheme("dark_theme")
+        setIaDark(!iaDark)
+
+      }
+    } ;
+
+    useEffect(() => {
+      document.body.className = theme;
+    }, [theme]);
 
   return (
-    <div>
-        <div className="sc-fJxALz eFbGYe"><div className="sc-bsatvv jnCyRr"><div className="sc-bdnxRM sc-gKAaRy sc-jrsJWt sc-dtLLSn fzUdiI fHYJrX ipgglb fTfOsi"><a href="." className="sc-eHEENL hTVbYg"><div className="sc-hzUIXc jSTRnN"><img width="350px" src={logo} alt="logo"/></div></a></div><div className="sc-bdnxRM swapp sc-gKAaRy sc-dkQUaI fzUdiI fHYJrX eFlXSC"><span className="bggg"><a className="sc-xGAEC giFUhe ACTIVE" id="swap-nav-link" href="#/swap" aria-current="page">Swap</a></span></div><div className="sc-gIvpjk dVRMhB"><div className="sc-euEtCV eRaVyv"><span className="sc-ikXwFM VYmft"></span><div className="sc-WZYut fXnmVI" style={{pointerEvents: "auto"}}><button id="connect-wallet" className="sc-bdnxRM bhVlig sc-kEqXSa sc-crzoAE sc-GvhzO sc-bXexck hAmzBT hUdkEf kxlnZx cvtCNZ"><p className="sc-csTbgd text-dark kglWtV">Connect to a wallet</p></button></div></div><div className="sc-fHCHyC crlswz"><button className="sc-dWBRfb jeiBZJ"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg></button></div></div></div></div>
+    <div className='maain'>
+        <div className="sc-fJxALz eFbGYe"><div className="sc-bsatvv jnCyRr"><div className="sc-bdnxRM sc-gKAaRy sc-jrsJWt sc-dtLLSn fzUdiI fHYJrX ipgglb fTfOsi"><a href="." className="sc-eHEENL hTVbYg"><div className="sc-hzUIXc jSTRnN"><img width="350px" src={logo} alt="logo"/></div></a></div><div className="sc-bdnxRM swapp sc-gKAaRy sc-dkQUaI fzUdiI fHYJrX eFlXSC"><span className="bggg"><a className="sc-xGAEC giFUhe ACTIVE" id="swap-nav-link" href="#/swap" aria-current="page">Swap</a></span></div><div className="sc-gIvpjk dVRMhB"><div className="sc-euEtCV eRaVyv"><span className="sc-ikXwFM VYmft"></span><div className="sc-WZYut fXnmVI" style={{pointerEvents: "auto"}}><button id="connect-wallet" className="sc-bdnxRM bhVlig sc-kEqXSa sc-crzoAE sc-GvhzO sc-bXexck hAmzBT hUdkEf kxlnZx cvtCNZ"><p className="sc-csTbgd wallet kglWtV">Connect to a wallet</p></button></div></div><div className="sc-fHCHyC crlswz">
+          <button className="sc-dWBRfb jeiBZJ" onClick={() => toggleTheme()}>
+        {iaDark?<><span className="fs-4" ><FiSun /></span></>:<><span className="fs-4"><BsMoon /></span></>}  
+          </button></div></div></div></div>
 
         <div className="sc-cSiAOC exbPXw"><div className="sc-eEVmNe sc-gVFcvn ceRKqw kDyXxF"></div><div height="0" className="sc-cbeScs kuDVIy"><div className="sc-hkeOVe cosZie"></div></div><a target="_blank" rel="noopener noreferrer" href="https://testnet.archiescan.io/block/1196244" className="sc-fKgJPI gOrrtT"><div className="sc-jHcXXw jmFqgb"><div className="sc-jJMGnK bXUIQO css-x9zcw6" style={{opacity: "0.3"}}>1196244</div><div className="sc-bQCEYZ gBldzM"></div></div></a><div className="sc-kBqmDu gGpzTx" style={{marginBottom: "20px", display: "none"}}><a aria-current="page" className="sc-gJjCVn FMDbw ACTIVE" id="swap-nav-link" href="#/swap">Swap</a><a className="sc-gJjCVn FMDbw" id="pool-nav-link" href="#/pool">Pool</a></div><div className="sc-hmvkKb DCgcf"><div className="sc-hWZktu fkNuDh"><div className="sc-bdnxRM sc-gKAaRy sc-iCoGMd fzUdiI fHYJrX kMthTr"><div className="sc-jJMGnK iJQSkR css-1kt4f20">Swap</div><div className="sc-iuhXDa dBEucF"><button id="open-settings-dialog-button" className="sc-jcsPjo bUEpDn">
         <Button variant="" onClick={() => setModalShow(true)}>
