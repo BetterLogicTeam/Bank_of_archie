@@ -6,6 +6,7 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { BsMoon } from "react-icons/bs";
 import { FiSun } from "react-icons/fi";
+import { loadWeb3 } from '../apis/api';
 
 function MyVerticallyCenteredModal(props) {
     return (
@@ -15,8 +16,8 @@ function MyVerticallyCenteredModal(props) {
         aria-labelledby="contained-modal-title-vcenter"
         centered
       >
-        {/* <Modal.Header closeButton> */}
-        {/* </Modal.Header> */}
+        <Modal.Header closeButton>
+        </Modal.Header>
         <Modal.Body>
           <span className="sc-eCbnUT dUrPfY"><div className="sc-eEVmNe ceRJCx" style={{padding: "1rem"}}><div className="css-18hn7mq">Transaction Settings</div><div className="sc-eEVmNe ceRJCx"><div className="sc-eEVmNe jpVwse"><div className="sc-bdnxRM sc-gKAaRy sc-jrsJWt fzUdiI fHYJrX ipgglb"><div className="sc-jJMGnK bXUIQO css-1pnt2fu">Slippage tolerance</div><span style={{marginLeft: "4px"}}><div className="sc-irKDMX cwoGFd"><div className="sc-dvUynV dKBgpN"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg></div></div></span></div><div className="sc-bdnxRM sc-gKAaRy sc-iCoGMd fzUdiI fHYJrX kMthTr"><button className="sc-jYKCQm sc-bxLXlR bCZoQs UMPxJ">0.1%</button><button className="sc-jYKCQm sc-bxLXlR bCZoQs kxYBWW">0.5%</button><button className="sc-jYKCQm sc-bxLXlR bCZoQs UMPxJ">1%</button><button tabindex="-1" className="sc-jYKCQm sc-dHMioH bCZoQs foCclh"><div className="sc-bdnxRM sc-gKAaRy sc-iCoGMd fzUdiI fHYJrX kMthTr"><input placeholder="0.50" color="" className="sc-jVSGNQ HfXha" value=""/>%</div></button></div></div><div className="sc-eEVmNe jpVwse"><div className="sc-bdnxRM sc-gKAaRy sc-jrsJWt wedth fzUdiI fHYJrX ipgglb"><div className="sc-jJMGnK bXUIQO css-1pnt2fu">Transaction deadline</div><span style={{marginLeft: "4px"}}><div className="sc-irKDMX cwoGFd"><div className="sc-dvUynV dKBgpN"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg></div></div></span></div><div className="sc-bdnxRM sc-gKAaRy sc-jrsJWt fzUdiI fHYJrX ipgglb"><button tabindex="-1" className="wedth sc-jYKCQm sc-dHMioH bCZoQs foCclh" style={{width: "80px"}}><input placeholder="20" className="sc-jVSGNQ HfXha" value=""/></button><div className="sc-jJMGnK iJQSkR css-1ecm0so" style={{paddingLeft: "8px"}}>minutes</div></div></div></div><div className="css-18hn7mq">Interface Settings</div><div className="sc-bdnxRM sc-gKAaRy sc-iCoGMd fzUdiI fHYJrX kMthTr"><div className="sc-bdnxRM sc-gKAaRy sc-jrsJWt fzUdiI fHYJrX ipgglb"><div className="sc-jJMGnK bXUIQO css-1pnt2fu">Toggle Expert Mode</div><span style={{marginLeft: "4px"}}><div className="sc-irKDMX cwoGFd"><div className="sc-dvUynV dKBgpN"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg></div></div></span></div><button id="toggle-expert-mode-button" className="sc-bA-DTon lcOYlI"><span className="sc-kGVuwA lgWYGM">On</span><span className="sc-kGVuwA bwBmjj">Off</span></button></div><div className="sc-bdnxRM sc-gKAaRy sc-iCoGMd fzUdiI fHYJrX kMthTr"><div className="sc-bdnxRM sc-gKAaRy sc-jrsJWt fzUdiI fHYJrX ipgglb"><div className="sc-jJMGnK bXUIQO css-1pnt2fu">Disable Multihops</div><span style={{marginLeft: "4px"}}><div className="sc-irKDMX cwoGFd"><div className="sc-dvUynV dKBgpN"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg></div></div></span></div><button id="toggle-disable-multihop-button" className="sc-bA-DTon lcOYlI"><span className="sc-kGVuwA lgWYGM">On</span><span className="sc-kGVuwA bwBmjj">Off</span></button></div></div></span>
         </Modal.Body>
@@ -32,8 +33,8 @@ function MyVerticallyCenteredModal(props) {
         aria-labelledby="contained-modal-title-vcenter"
         centered
       >
-        {/* <Modal.Header closeButton> */}
-        {/* </Modal.Header> */}
+        <Modal.Header closeButton>
+        </Modal.Header>
         <Modal.Body>
           <span className="sc-eCbnUT dUrPfY"><div className="sc-eEVmNe ceRJCx" style={{padding: "1rem"}}><div className="css-18hn7mq">Transaction Settings</div><div className="sc-eEVmNe ceRJCx"><div className="sc-eEVmNe jpVwse"><div className="sc-bdnxRM sc-gKAaRy sc-jrsJWt fzUdiI fHYJrX ipgglb"><div className="sc-jJMGnK bXUIQO css-1pnt2fu">Slippage tolerance</div><span style={{marginLeft: "4px"}}><div className="sc-irKDMX cwoGFd"><div className="sc-dvUynV dKBgpN"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg></div></div></span></div><div className="sc-bdnxRM sc-gKAaRy sc-iCoGMd fzUdiI fHYJrX kMthTr"><button className="sc-jYKCQm sc-bxLXlR bCZoQs UMPxJ">0.1%</button><button className="sc-jYKCQm sc-bxLXlR bCZoQs kxYBWW">0.5%</button><button className="sc-jYKCQm sc-bxLXlR bCZoQs UMPxJ">1%</button><button tabindex="-1" className="sc-jYKCQm sc-dHMioH bCZoQs foCclh"><div className="sc-bdnxRM sc-gKAaRy sc-iCoGMd fzUdiI fHYJrX kMthTr"><input placeholder="0.50" color="" className="sc-jVSGNQ HfXha" value=""/>%</div></button></div></div><div className="sc-eEVmNe jpVwse"><div className="wedth sc-bdnxRM sc-gKAaRy sc-jrsJWt fzUdiI fHYJrX ipgglb"><div className="sc-jJMGnK bXUIQO css-1pnt2fu">Transaction deadline</div><span style={{marginLeft: "4px"}}><div className="sc-irKDMX cwoGFd"><div className="sc-dvUynV dKBgpN"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg></div></div></span></div><div className="sc-bdnxRM sc-gKAaRy sc-jrsJWt fzUdiI fHYJrX ipgglb"><button tabindex="-1" className="sc-jYKCQm sc-dHMioH bCZoQs foCclh" style={{width: "80px"}}><input placeholder="20" className="sc-jVSGNQ HfXha" value=""/></button><div className="sc-jJMGnK iJQSkR css-1ecm0so" style={{paddingLeft: "8px"}}>minutes</div></div></div></div><div className="css-18hn7mq">Interface Settings</div><div className="sc-bdnxRM sc-gKAaRy sc-iCoGMd fzUdiI fHYJrX kMthTr"><div className="sc-bdnxRM sc-gKAaRy sc-jrsJWt fzUdiI fHYJrX ipgglb"><div className="sc-jJMGnK bXUIQO css-1pnt2fu">Toggle Expert Mode</div><span style={{marginLeft: "4px"}}><div className="sc-irKDMX cwoGFd"><div className="sc-dvUynV dKBgpN"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg></div></div></span></div><button id="toggle-expert-mode-button" className="sc-bA-DTon lcOYlI"><span className="sc-kGVuwA lgWYGM">On</span><span className="sc-kGVuwA bwBmjj">Off</span></button></div><div className="sc-bdnxRM sc-gKAaRy sc-iCoGMd fzUdiI fHYJrX kMthTr"><div className="sc-bdnxRM sc-gKAaRy sc-jrsJWt fzUdiI fHYJrX ipgglb"><div className="sc-jJMGnK bXUIQO css-1pnt2fu">Disable Multihops</div><span style={{marginLeft: "4px"}}><div className="sc-irKDMX cwoGFd"><div className="sc-dvUynV dKBgpN"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg></div></div></span></div><button id="toggle-disable-multihop-button" className="sc-bA-DTon lcOYlI"><span className="sc-kGVuwA lgWYGM">On</span><span className="sc-kGVuwA bwBmjj">Off</span></button></div></div></span>
         </Modal.Body>
@@ -153,10 +154,10 @@ function Landing() {
       </Button>
 
 
-      {/* <MyVerticallyCenteredModal2
+      <MyVerticallyCenteredModal2
         show={modalShow2}
         onHide={() => setModalShow2(false)}
-      /> */}
+      />
             </span></button></div></div>
                                         <div className="exchange_arrow">
                                             <div className="sc-bdnxRM  my-3 sc-gKAaRy sc-pNWdM fzUdiI gtRDRy hEuxWI" onClick={() => setValue1(true)}><div className="move sc-ecQkzk ggFzum"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#565A69" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg></div></div>
@@ -167,10 +168,10 @@ function Landing() {
             <span className="sc-lfRxJW hoeYaZ"><span className="sc-kJNqyW kEWqjy token-symbol-container">Token</span><svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg" className="sc-hndLF eDmepi"><path d="M0.97168 1L6.20532 6L11.439 1" stroke="#AEAEAE"></path></svg></span>
       </Button>
 
-   {/* <MyVerticallyCenteredModal3
+   <MyVerticallyCenteredModal3
         show={modalShow3}
         onHide={() => setModalShow3(false)}
-      /> */}
+      />
                 </button></div></div>
 
                                     </>
@@ -182,10 +183,10 @@ function Landing() {
             <span className="sc-lfRxJW hoeYaZ"><span className="sc-kJNqyW kEWqjy token-symbol-container">Token</span><svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg" className="sc-hndLF eDmepi"><path d="M0.97168 1L6.20532 6L11.439 1" stroke="#AEAEAE"></path></svg></span>
       </Button>
 
-   {/* <MyVerticallyCenteredModal3
+   <MyVerticallyCenteredModal3
         show={modalShow3}
         onHide={() => setModalShow3(false)}
-      /> */}
+      />
                 </button></div></div>
                                         <div className="exchange_arrow">
                                             <div className="sc-bdnxRM  my-3 sc-gKAaRy sc-pNWdM fzUdiI gtRDRy hEuxWI" onClick={() => setValue1(false)}><div className="move sc-ecQkzk ggFzum"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#565A69" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg></div></div>
@@ -198,10 +199,10 @@ function Landing() {
       </Button>
 
 
-      {/* <MyVerticallyCenteredModal2
+      <MyVerticallyCenteredModal2
         show={modalShow2}
         onHide={() => setModalShow2(false)}
-      /> */}
+      />
             </span></button></div></div>
 
 
@@ -219,14 +220,17 @@ function Landing() {
                 
                 </div><div className="sc-bdnxRM sc-dlnjwi imLKPM crWdTg"><div className="sc-eEVmNe jpVwse" style={{padding: "3px 4px"}}><div className="sc-bdnxRM sc-gKAaRy sc-iCoGMd fzUdiI fHYJrX kMthTr">
                 <Button variant="" onClick={() => setModalShow(true)}>
-                <div className="sc-dYXZXt gRxzFx css-1rhdhic">Slippage Tolerance</div>
+                {/* <div className="sc-dYXZXt gRxzFx css-1rhdhic">Owner Fee</div> */}
             </Button>
       
             {/* <MyVerticallyCenteredModal
               show={modalShow}
               onHide={() => setModalShow(false)}
             /> */}
-                    <div className="sc-dYXZXt gRxzFx css-1rhdhic">0.5%</div></div></div></div></div><div className="sc-iXquSf bwRbQ"><button className="sc-bdnxRM bhVlig sc-kEqXSa sc-iqAclL hAmzBT iSuonF">Swap</button></div></div></div></div>
+                    {/* <div className="sc-dYXZXt gRxzFx css-1rhdhic">0.5%</div> */}
+                    </div></div></div></div>
+                    <div className="sc-iXquSf bwRbQ">
+                      <button className="sc-bdnxRM bhVlig sc-kEqXSa sc-iqAclL hAmzBT iSuonF">Swap</button></div></div></div></div>
     </div>
   )
 }
