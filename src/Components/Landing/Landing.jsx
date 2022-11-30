@@ -135,10 +135,10 @@ function Landing() {
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="sc-jfkLlK bRRHuO"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
       </Button>
 
-      <MyVerticallyCenteredModal
+      {/* <MyVerticallyCenteredModal
         show={modalShow}
         onHide={() => setModalShow(false)}
-      />
+      /> */}
             </button></div></div></div><div id="swap-page" className="sc-juXuNZ KigMW"><div className="sc-eEVmNe ceRJCx"><div id="swap-currency-input" className="sc-geBCVM dqgKzp">
 
 
@@ -153,10 +153,10 @@ function Landing() {
       </Button>
 
 
-      <MyVerticallyCenteredModal2
+      {/* <MyVerticallyCenteredModal2
         show={modalShow2}
         onHide={() => setModalShow2(false)}
-      />
+      /> */}
             </span></button></div></div>
                                         <div className="exchange_arrow">
                                             <div className="sc-bdnxRM  my-3 sc-gKAaRy sc-pNWdM fzUdiI gtRDRy hEuxWI" onClick={() => setValue1(true)}><div className="move sc-ecQkzk ggFzum"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#565A69" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg></div></div>
@@ -167,10 +167,10 @@ function Landing() {
             <span className="sc-lfRxJW hoeYaZ"><span className="sc-kJNqyW kEWqjy token-symbol-container">Token</span><svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg" className="sc-hndLF eDmepi"><path d="M0.97168 1L6.20532 6L11.439 1" stroke="#AEAEAE"></path></svg></span>
       </Button>
 
-   <MyVerticallyCenteredModal3
+   {/* <MyVerticallyCenteredModal3
         show={modalShow3}
         onHide={() => setModalShow3(false)}
-      />
+      /> */}
                 </button></div></div>
 
                                     </>
@@ -182,10 +182,10 @@ function Landing() {
             <span className="sc-lfRxJW hoeYaZ"><span className="sc-kJNqyW kEWqjy token-symbol-container">Token</span><svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg" className="sc-hndLF eDmepi"><path d="M0.97168 1L6.20532 6L11.439 1" stroke="#AEAEAE"></path></svg></span>
       </Button>
 
-   <MyVerticallyCenteredModal3
+   {/* <MyVerticallyCenteredModal3
         show={modalShow3}
         onHide={() => setModalShow3(false)}
-      />
+      /> */}
                 </button></div></div>
                                         <div className="exchange_arrow">
                                             <div className="sc-bdnxRM  my-3 sc-gKAaRy sc-pNWdM fzUdiI gtRDRy hEuxWI" onClick={() => setValue1(false)}><div className="move sc-ecQkzk ggFzum"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#565A69" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg></div></div>
@@ -198,10 +198,10 @@ function Landing() {
       </Button>
 
 
-      <MyVerticallyCenteredModal2
+      {/* <MyVerticallyCenteredModal2
         show={modalShow2}
         onHide={() => setModalShow2(false)}
-      />
+      /> */}
             </span></button></div></div>
 
 
@@ -222,10 +222,10 @@ function Landing() {
                 <div className="sc-dYXZXt gRxzFx css-1rhdhic">Slippage Tolerance</div>
             </Button>
       
-            <MyVerticallyCenteredModal
+            {/* <MyVerticallyCenteredModal
               show={modalShow}
               onHide={() => setModalShow(false)}
-            />
+            /> */}
                     <div className="sc-dYXZXt gRxzFx css-1rhdhic">0.5%</div></div></div></div></div><div className="sc-iXquSf bwRbQ"><button className="sc-bdnxRM bhVlig sc-kEqXSa sc-iqAclL hAmzBT iSuonF">Swap</button></div></div></div></div>
     </div>
   )
