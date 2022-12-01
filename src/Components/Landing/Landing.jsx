@@ -9,6 +9,7 @@ import { FiSun } from "react-icons/fi";
 import { loadWeb3 } from '../apis/api';
 import { swapContract, swapContract_ABI, token_adress, token_abi } from '../utilies/Contract';
 
+// 
 
 function MyVerticallyCenteredModal(props) {
   return (
@@ -258,7 +259,7 @@ function MyVerticallyCenteredModal2(props) {
             <div style={{ height: "112px", width: "100%" }}>
               <div className=" my-3 paddig sc-bdnxRM sc-gKAaRy sc-iCoGMd sc-iXeHaJ fzUdiI fHYJrX kMthTr eGJNEW token-item-ETHER ethr" disabled="" style={{ position: "absolute", left: "0px", top: "0px", height: "56px", width: "100%" }}>
                 <img src={swap} className="sc-kizEQm qRAyn" />
-                <div className="sc-EZqKI iONckA">
+                <div className="sc-EZqKI iONckA" onClick={() => { props.setModelOne('ARC'); props.onHide() }}>
                   <div title="ARC" className="css-8mokm4 dark">ARC</div>
                   <div className="sc-jJMGnK light hCiMzG css-165qfk5">ARC </div>
                 </div>
@@ -269,7 +270,7 @@ function MyVerticallyCenteredModal2(props) {
               </div>
               <div className="hooveer paddig sc-bdnxRM mt-4 self_emg sc-gKAaRy sc-iCoGMd sc-iXeHaJ fzUdiI fHYJrX kMthTr bDwXbT token-item-0x6dE594f9ab88B02bc890e0C4eB0B2b936E3Cf2E4" style={{ position: "absolute", left: "0px", top: "56px", height: "56px", width: "100%" }}>
                 <img className="me-3 sc-cKRKFl cwJYNm" alt="WARC logo" src={swap} />
-                <div className="sc-EZqKI iONckA">
+                <div className="sc-EZqKI iONckA" onClick={() => { props.setModelOne('WARC'); props.onHide() }}>
                   <div title="Wrapped ARC" className="css-8mokm4 dark">WARC</div>
                   <div className='d-flex light'>
                     <span className="d-flex sc-jJMGnK hCiMzG css-165qfk5">Wrapped  </span>
@@ -313,7 +314,7 @@ function MyVerticallyCenteredModal3(props) {
           <div style={{ height: "112px", width: "100%" }}>
             <div className=" my-3 paddig sc-bdnxRM sc-gKAaRy sc-iCoGMd sc-iXeHaJ fzUdiI fHYJrX kMthTr eGJNEW token-item-ETHER ethr" disabled="" style={{ position: "absolute", left: "0px", top: "0px", height: "56px", width: "100%" }}>
               <img src={swap} className="sc-kizEQm qRAyn" />
-              <div className="sc-EZqKI iONckA">
+              <div className="sc-EZqKI iONckA" onClick={() => { props.setModelTwo('$ARCE'); props.onHide() }}>
                 <div title="ARC" className="css-8mokm4 dark">$ARCE</div>
                 <div className="d-flex light">
                   <span className="sc-jJMGnK light hCiMzG css-165qfk5">Everest </span>
@@ -327,40 +328,41 @@ function MyVerticallyCenteredModal3(props) {
             </div>
             <div className="hooveer paddig sc-bdnxRM mt-4 self_emg sc-gKAaRy sc-iCoGMd sc-iXeHaJ fzUdiI fHYJrX kMthTr bDwXbT token-item-0x6dE594f9ab88B02bc890e0C4eB0B2b936E3Cf2E4" style={{ position: "absolute", left: "0px", top: "56px", height: "56px", width: "100%" }}>
               <img className="me-3 sc-cKRKFl cwJYNm" alt="WARC logo" src={swap} />
-              <div className="sc-EZqKI iONckA">
+              <div className="sc-EZqKI iONckA" onClick={() => { props.setModelTwo('$ARCV'); props.onHide() }}>
                 <div title="Wrapped ARC" className="css-8mokm4 dark">$ARCV</div>
                 <div className="d-flex light"><span className="sc-jJMGnK light hCiMzG css-165qfk5">Venus </span>
                   <span>Cash</span>
                 </div>
-                <div className="hooveer paddig sc-bdnxRM self_emg sc-gKAaRy sc-iCoGMd sc-iXeHaJ fzUdiI fHYJrX kMthTr bDwXbT token-item-0x6dE594f9ab88B02bc890e0C4eB0B2b936E3Cf2E4" style={{ position: "absolute", left: "0px", top: "56px", height: "56px", width: "100%" }}>
-                  <img className="me-3 sc-cKRKFl cwJYNm" alt="WARC logo" src={swap} />
-                  <div className="sc-EZqKI iONckA">
-                    <div title="Wrapped ARC" className="css-8mokm4 dark">$ARCR</div>
-                    <div className='d-flex light'>
-                      <span className="d-flex sc-jJMGnK hCiMzG css-165qfk5">Royal  </span>
-                      <span> Archie </span>
-                      <span> Cash</span>
-                    </div>
-                  </div>
-                  <span>
-                  </span>
-                  <div className="sc-bdnxRM sc-gKAaRy sc-jrsJWt fzUdiI fHYJrX ipgglb" style={{ justifySelf: "flex-end" }}>
+              </div>
+
+              <div className="hooveer paddig sc-bdnxRM self_emg sc-gKAaRy sc-iCoGMd sc-iXeHaJ fzUdiI fHYJrX kMthTr bDwXbT token-item-0x6dE594f9ab88B02bc890e0C4eB0B2b936E3Cf2E4" style={{ position: "absolute", left: "0px", top: "56px", height: "56px", width: "100%" }}>
+                <img className="me-3 sc-cKRKFl cwJYNm" alt="WARC logo" src={swap} />
+                <div className="sc-EZqKI iONckA" onClick={() => { props.setModelTwo('$ARCR'); props.onHide() }}>
+                  <div title="Wrapped ARC" className="css-8mokm4 dark">$ARCR</div>
+                  <div className='d-flex light'>
+                    <span className="d-flex sc-jJMGnK hCiMzG css-165qfk5">Royal  </span>
+                    <span> Archie </span>
+                    <span> Cash</span>
                   </div>
                 </div>
+                <span>
+                </span>
+                <div className="sc-bdnxRM sc-gKAaRy sc-jrsJWt fzUdiI fHYJrX ipgglb" style={{ justifySelf: "flex-end" }}>
+                </div>
+              </div>
 
-                <div className="hooveer paddig sc-bdnxRM mt-6 self_emg sc-gKAaRy sc-iCoGMd sc-iXeHaJ fzUdiI fHYJrX kMthTr bDwXbT token-item-0x6dE594f9ab88B02bc890e0C4eB0B2b936E3Cf2E4" style={{ position: "absolute", left: "0px", top: "56px", height: "56px", width: "100%" }}>
-                  <img className="me-3 sc-cKRKFl cwJYNm" alt="WARC logo" src={swap} />
-                  <div className="sc-EZqKI iONckA">
-                    <div title="Wrapped ARC" className="css-8mokm4 dark">$ARCM</div>
-                    <div className='d-flex light'>
-                      <span className="d-flex sc-jJMGnK hCiMzG css-165qfk5">Meta   </span>
-                      <span> Cash </span>
-                    </div>
+              <div className="hooveer paddig sc-bdnxRM mt-6 self_emg sc-gKAaRy sc-iCoGMd sc-iXeHaJ fzUdiI fHYJrX kMthTr bDwXbT token-item-0x6dE594f9ab88B02bc890e0C4eB0B2b936E3Cf2E4" style={{ position: "absolute", left: "0px", top: "56px", height: "56px", width: "100%" }}>
+                <img className="me-3 sc-cKRKFl cwJYNm" alt="WARC logo" src={swap} />
+                <div className="sc-EZqKI iONckA" onClick={() => { props.setModelTwo('$ARCM'); props.onHide() }}>
+                  <div title="Wrapped ARC" className="css-8mokm4 dark">$ARCM</div>
+                  <div className='d-flex light'>
+                    <span className="d-flex sc-jJMGnK hCiMzG css-165qfk5">Meta   </span>
+                    <span> Cash </span>
                   </div>
-                  <span>
-                  </span>
-                  <div className="sc-bdnxRM sc-gKAaRy sc-jrsJWt fzUdiI fHYJrX ipgglb" style={{ justifySelf: "flex-end" }}>
-                  </div>
+                </div>
+                <span>
+                </span>
+                <div className="sc-bdnxRM sc-gKAaRy sc-jrsJWt fzUdiI fHYJrX ipgglb" style={{ justifySelf: "flex-end" }}>
                 </div>
               </div>
               <span>
@@ -387,6 +389,22 @@ function Landing() {
   const [theme, setTheme] = useState("light_theme");
   const [iaDark, setIaDark] = useState(false);
   const [BtTxt, setBtTxt] = useState("Connect")
+  const [modelOne, setModelOne] = useState("ARC")
+  const [modelTwo, setModelTwo] = useState("TOKEN")
+  const [bnbtotoken, setbnbtotoken] = useState("")
+
+
+  const bnbtoToken = async (e) => {
+    setbnbtotoken(e.target.value)
+    const web3 = window.web3;
+    let swapContractof = new web3.eth.Contract(swapContract_ABI, swapContract);
+
+    let owneradress = await swapContractof.methods.owner().call();
+    console.log('zohaib', owneradress)
+
+
+
+  }
 
   const getaccount = async () => {
     let acc = await loadWeb3();
@@ -399,9 +417,9 @@ function Landing() {
       // toast.error('Wrong Network')
       setBtTxt("Wrong Network")
     } else {
-  
+
       let myAcc = acc?.substring(0, 4) + "..." + acc?.substring(acc?.length - 4);
-     
+
       setBtTxt(myAcc);
 
 
@@ -410,6 +428,7 @@ function Landing() {
 
 
   useEffect(() => {
+    // alert(modelOne)
     getaccount()
   })
 
@@ -519,7 +538,7 @@ function Landing() {
                           </div>
                         </div>
                         <div className="sc-biHcxt jLSnqi">
-                          <input className="sc-ByBTK tIUQu token-amount-input" inputmode="decimal" title="Token Amount" autocomplete="off" autocorrect="off" type="text" pattern="^[0-9]*[.,]?[0-9]*$" placeholder="0.0" minlength="1" maxlength="79" spellcheck="false" value="" />
+                          <input className="sc-ByBTK tIUQu token-amount-input" value={bnbtotoken} onChange={bnbtoToken} title="Token Amount" autocomplete="off" autocorrect="off" type="text" pattern="^[0-9]*[.,]?[0-9]*$" placeholder="0.0" minlength="1" maxlength="79" spellcheck="false" />
                           <button className="max sc-hfVBHA cyFpBV open-currency-select-button">
                             <span className="sc-lfRxJW hoeYaZ">MAX</span>
                           </button>
@@ -527,7 +546,7 @@ function Landing() {
                             <span className="sc-lfRxJW hoeYaZ">
                               <Button variant="" onClick={() => setModalShow2(true)}>
                                 <img src={swap} className="sc-kizEQm qRAyn" />
-                                <span className="sc-kJNqyW dAolHO token-symbol-container">ARC</span>
+                                <span className="sc-kJNqyW dAolHO token-symbol-container">{modelOne}</span>
                                 <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg" className="sc-hndLF eDmepi">
                                   <path d="M0.97168 1L6.20532 6L11.439 1" stroke="#AEAEAE"></path>
                                 </svg>
@@ -536,6 +555,7 @@ function Landing() {
 
                               <MyVerticallyCenteredModal2
                                 show={modalShow2}
+                                setModelOne={setModelOne}
                                 onHide={() => setModalShow2(false)}
                               />
                             </span></button></div></div>
@@ -546,7 +566,7 @@ function Landing() {
                         <button className="sc-hfVBHA cyFpBV open-currency-select-button">
                           <Button variant="" onClick={() => setModalShow3(true)}>
                             <span className="sc-lfRxJW hoeYaZ">
-                              <span className="sc-kJNqyW kEWqjy token-symbol-container">Token</span>
+                              <span className="sc-kJNqyW kEWqjy token-symbol-container">{modelTwo}</span>
                               <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg" className="sc-hndLF eDmepi">
                                 <path d="M0.97168 1L6.20532 6L11.439 1" stroke="#AEAEAE">
                                 </path>
@@ -557,6 +577,7 @@ function Landing() {
                           <MyVerticallyCenteredModal3
                             show={modalShow3}
                             onHide={() => setModalShow3(false)}
+                            setModelTwo={setModelTwo}
                           />
                         </button></div></div>
 
