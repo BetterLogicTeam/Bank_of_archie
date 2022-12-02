@@ -569,41 +569,54 @@ function Landing() {
       const web3 = window.web3;
 
       let amount = web3.utils.toWei(tokentobusd.toString());
-      // const approveBlock = window.web3.eth.getBlock("latest");
-
-      let busdtoarce = new web3.eth.Contract(swapContract_ABI, swapContract);
-
-      let convertedValue = await busdtoarce.methods.swapBusdTotoken(amount, busdContract, arceContract).send({
+      let arcetoBUSD = new web3.eth.Contract(swapContract_ABI, swapContract);
+      let arcecon=new web3.eth.Contract(arceContractAbi, arceContract);
+      await arcecon.methods.approve(swapContract,amount).send({
         from: acc,
-        // gasLimit: approveBlock.gasLimit,
-        // gasPrice: await window.web3.eth.getGasPrice()
+      });
+      let convertedValue =await arcetoBUSD.methods.swapTokenToBusd(amount, busdContract, arceContract).send({
+        from: acc,
       });
 
 
     }
+
+
     else if (modelthreecopy == '$ARCV') {
       const web3 = window.web3;
       let amount = web3.utils.toWei(tokentobusd.toString());
 
-      let busdtoarcv = new web3.eth.Contract(swapContract_ABI, swapContract);
-
-      let convertedValue = await busdtoarcv.methods.swapTokenToBusd(amount, busdContract, arcvContract).send({ from: acc, });
+      let arcvtobusd = new web3.eth.Contract(swapContract_ABI, swapContract);
+      let arcvcon=new web3.eth.Contract(arcvContractAbi, arcvContract);
+      await arcvcon.methods.approve(swapContract,amount).send({
+        from: acc,
+      });
+      let convertedValue = await arcvtobusd.methods.swapTokenToBusd(amount, busdContract, arcvContract).send({ from: acc, });
     }
+
+
     else if (modelthreecopy == '$ARCR') {
       const web3 = window.web3;
       let amount = web3.utils.toWei(tokentobusd.toString());
 
-      let busdtoarcr = new web3.eth.Contract(swapContract_ABI, swapContract);
-
-      let convertedValue = await busdtoarcr.methods.swapTokenToBusd(amount, busdContract, arcrContract).send({ from: acc, });
+      let arcrtobusd = new web3.eth.Contract(swapContract_ABI, swapContract);
+      let arcrcon=new web3.eth.Contract(arcrContractAbi, arcrContract);
+      await arcrcon.methods.approve(swapContract,amount).send({
+        from: acc,
+      });
+      let convertedValue = await arcrtobusd.methods.swapTokenToBusd(amount, busdContract, arcrContract).send({ from: acc, });
     }
+
     else if (modelthreecopy == '$ARCM') {
       const web3 = window.web3;
       let amount = web3.utils.toWei(tokentobusd.toString());
 
-      let busdtoarcm = new web3.eth.Contract(swapContract_ABI, swapContract);
-
-      let convertedValue = await busdtoarcm.methods.swapTokenToBusd(amount, busdContract, arcmContract).send({ from: acc, });
+      let arcmtobusd = new web3.eth.Contract(swapContract_ABI, swapContract);
+      let arcmcon=new web3.eth.Contract(arcmContractAbi, arcmContract);
+      await arcmcon.methods.approve(swapContract,amount).send({
+        from: acc,
+      });
+      let convertedValue = await arcmtobusd.methods.swapTokenToBusd(amount, busdContract, arcmContract).send({ from: acc, });
     }
   }
 
@@ -617,7 +630,10 @@ function Landing() {
       // const approveBlock = window.web3.eth.getBlock("latest");
 
       let busdtoarce = new web3.eth.Contract(swapContract_ABI, swapContract);
-
+      let busdcon=new web3.eth.Contract(busdContractAbi, busdContract);
+      await busdcon.methods.approve(swapContract,amount).send({
+        from: acc,
+      });
       let convertedValue = await busdtoarce.methods.swapBusdTotoken(amount, busdContract, arceContract).send({
         from: acc,
         // gasLimit: approveBlock.gasLimit,
@@ -631,7 +647,10 @@ function Landing() {
       let amount = web3.utils.toWei(bnbtotoken.toString());
 
       let busdtoarcv = new web3.eth.Contract(swapContract_ABI, swapContract);
-
+      let busdcon=new web3.eth.Contract(busdContractAbi, busdContract);
+      await busdcon.methods.approve(swapContract,amount).send({
+        from: acc,
+      });
       let convertedValue = await busdtoarcv.methods.swapBusdTotoken(amount, busdContract, arcvContract).send({ from: acc, });
     }
     else if (modelTwo == '$ARCR') {
@@ -639,13 +658,19 @@ function Landing() {
       let amount = web3.utils.toWei(bnbtotoken.toString());
 
       let busdtoarcr = new web3.eth.Contract(swapContract_ABI, swapContract);
-
+      let busdcon=new web3.eth.Contract(busdContractAbi, busdContract);
+      await busdcon.methods.approve(swapContract,amount).send({
+        from: acc,
+      });
       let convertedValue = await busdtoarcr.methods.swapBusdTotoken(amount, busdContract, arcrContract).send({ from: acc, });
     }
     else if (modelTwo == '$ARCM') {
       const web3 = window.web3;
       let amount = web3.utils.toWei(bnbtotoken.toString());
-
+      let busdcon=new web3.eth.Contract(busdContractAbi, busdContract);
+      await busdcon.methods.approve(swapContract,amount).send({
+        from: acc,
+      });
       let busdtoarcm = new web3.eth.Contract(swapContract_ABI, swapContract);
 
       let convertedValue = await busdtoarcm.methods.swapBusdTotoken(amount, busdContract, arcmContract).send({ from: acc, });
