@@ -1050,7 +1050,8 @@ function Landing() {
               show={modalShow}
               onHide={() => setModalShow(false)}
             /> */}
-                    <div className="sc-dYXZXt gRxzFx css-1rhdhic">0.5%</div></div></div></div></div><div className="sc-iXquSf bwRbQ">
+                    {/* <div className="sc-dYXZXt gRxzFx css-1rhdhic">0.5%</div> */}
+                  </div></div></div></div><div className="sc-iXquSf bwRbQ">
               {flag == true ? <>
                 <button className="sc-bdnxRM bhVlig sc-kEqXSa sc-iqAclL hAmzBT iSuonF" onClick={swap}>Swap</button>
 
