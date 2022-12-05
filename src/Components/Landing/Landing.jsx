@@ -1004,7 +1004,7 @@ function Landing() {
                       <div className="second sc-clGGWX dSShbu">
                         <div className="sc-fiCYzP ftghdH">
                           <div className="sc-bdnxRM sc-gKAaRy sc-iCoGMd fzUdiI fHYJrX kMthTr">
-                            <div className="sc-jJMGnK bXUIQO css-1rhdhic">To</div>
+                            <div className="sc-jJMGnK bXUIQO css-1rhdhic">From</div>
                           </div>
                           <div className=''>{tokenBalancecOPY}</div>
                         </div>
@@ -1030,11 +1030,11 @@ function Landing() {
                       <div className="exchange_arrow">
                         <div className="sc-bdnxRM  my-3 sc-gKAaRy sc-pNWdM fzUdiI gtRDRy hEuxWI" onClick={() => { setValue1(false); setfalag(!flag) }}><div className="move sc-ecQkzk ggFzum"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#565A69" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg></div></div>
                       </div>
-                      <div className="first sc-clGGWX dSShbu"><div className="sc-fiCYzP ftghdH"><div className="sc-bdnxRM sc-gKAaRy sc-iCoGMd fzUdiI fHYJrX kMthTr"><div className="sc-jJMGnK bXUIQO css-1rhdhic">From</div></div>
+                      <div className="first sc-clGGWX dSShbu"><div className="sc-fiCYzP ftghdH"><div className="sc-bdnxRM sc-gKAaRy sc-iCoGMd fzUdiI fHYJrX kMthTr"><div className="sc-jJMGnK bXUIQO css-1rhdhic">To</div></div>
                         <div className=''>{busdBalace}</div>
 
                       </div><div className="sc-biHcxt jLSnqi"><input className="sc-ByBTK tIUQu token-amount-input text-muted" disabled inputmode="decimal" title="Token Amount" autocomplete="off" autocorrect="off" type="text" pattern="^[0-9]*[.,]?[0-9]*$" placeholder="0.0" minlength="1" maxlength="79" spellcheck="false" value={bnbvalue} />
-                          <button className="max sc-hfVBHA cyFpBV open-currency-select-button" onClick={getMaxToken}><span className="sc-lfRxJW hoeYaZ">MAX</span></button>
+                          {/* <button className="max sc-hfVBHA cyFpBV open-currency-select-button" onClick={getMaxToken}><span className="sc-lfRxJW hoeYaZ">MAX</span></button> */}
                           <button className="sc-hfVBHA cyFpBV open-currency-select-button"><span className="sc-lfRxJW hoeYaZ">
                             <Button variant="" onClick={() => setModalShow2copy(true)}>
                               <img src={swap} className="sc-kizEQm qRAyn" />
