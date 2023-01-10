@@ -298,19 +298,25 @@ interface IERC20 {
 contract Swap is Ownable{
      using SafeMath for uint256;
 
-    uint256 public ownerfees=1000000000000000000;
+    uint256 public ownerfees=1000000000000000000; ///1
+    uint256 public ARWDPrice=1000000000000000000000; //1000
+
+    
      IERC20 public EverestCash;
      IERC20 public VenusCash;
      IERC20 public MetaCash;
      IERC20 public RoyalArchieCash;
      IERC20 public BUSD;
+     IERC20 public ARWD;
 
-    constructor(IERC20  _EverestCash,IERC20  _VenusCash,IERC20 _MetaCash,IERC20 _RoyalArchieCash,IERC20 _BUSD){
+
+    constructor(IERC20  _EverestCash,IERC20  _VenusCash,IERC20 _MetaCash,IERC20 _RoyalArchieCash,IERC20 _BUSD,IERC20 _ARWD){
         EverestCash=_EverestCash;
         VenusCash=_VenusCash;
         MetaCash=_MetaCash;
         RoyalArchieCash=_RoyalArchieCash;
         BUSD=_BUSD;
+        ARWD=_ARWD;
     }
 
    
@@ -336,12 +342,35 @@ contract Swap is Ownable{
      _BUSD.transfer(msg.sender,remaining);
     }
 
-    function setAddresses(IERC20  _EverestCash,IERC20  _VenusCash,IERC20 _MetaCash,IERC20 _RoyalArchieCash,IERC20 _BUSD) external onlyOwner{
+    function swapARWDtoTokens(uint256 Amount,IERC20 _ARWD,IERC20 Token) external {
+     require(Token.balanceOf(address(this))>=Amount,"Contract is ran out of funds! "); 
+     require(_ARWD==ARWD,"address not matched!"); 
+     require(Token == EverestCash || Token == VenusCash || Token == MetaCash || Token == RoyalArchieCash,"token address not matched");
+     ARWD.transferFrom(msg.sender,address(this),Amount);
+     uint256 remaining=Amount.div(1000);
+     Token.transfer(msg.sender,remaining);
+    }
+
+      function swapTokenToARWD(uint256 Amount,IERC20 _ARWD,IERC20 Token) external {
+    require(Token.balanceOf(address(this))>=Amount,"Contract is ran out of funds! "); 
+     require(_ARWD==ARWD,"address not matched!"); 
+     require(Token == EverestCash || Token == VenusCash || Token == MetaCash || Token == RoyalArchieCash,"token address not matched");  
+     Token.transferFrom(msg.sender,address(this),Amount);
+     uint256 _fee= calculateARWD(Amount);
+     ARWD.transfer(msg.sender,_fee);
+    }
+
+    
+
+
+
+    function setAddresses(IERC20  _EverestCash,IERC20  _VenusCash,IERC20 _MetaCash,IERC20 _RoyalArchieCash,IERC20 _BUSD,IERC20 _ARWD) external onlyOwner{
         EverestCash=_EverestCash;
         VenusCash=_VenusCash;
         MetaCash=_MetaCash;
         RoyalArchieCash=_RoyalArchieCash;
         BUSD=_BUSD;
+        ARWD=_ARWD;
     }
 
      function updateOwnerfee(uint256 _fee) external onlyOwner{
@@ -351,6 +380,12 @@ contract Swap is Ownable{
     function calculatefees(uint256 _tokenAmount) public view returns(uint256){
         return ((_tokenAmount.mul(ownerfees) ).div(100)).div(1e18);
     }
+
+    function calculateARWD(uint256 _tokenAmount) public view returns(uint256){
+        return ((_tokenAmount).mul(ARWDPrice)).div(1e18);
+    }
+
+
 
     
 }

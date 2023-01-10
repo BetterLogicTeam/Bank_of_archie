@@ -197,13 +197,13 @@ contract ERC20Detailed  {
 
 
 
-contract MetaCash is ERC20, ERC20Detailed {
+contract EverestCash is ERC20, ERC20Detailed {
 
     /**
      * @dev Constructor that gives msg.sender all of existing tokens.
      */
 
-   constructor ()  ERC20Detailed("Meta Cash", "ARCM",18) {
+   constructor ()  ERC20Detailed("Everest Cash", "$ARCE",18) {
         _mint(msg.sender,(1000000000*(10**18)));
     }
 
