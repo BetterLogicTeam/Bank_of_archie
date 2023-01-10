@@ -11,7 +11,7 @@ const networks = {
       decimals: 18,
     },
     rpcUrls: [
-      "https://rpc-test-1.archiechain.ios"
+      "https://rpc-test-1.archiechain.io"
     ],
     blockExplorerUrls: ["https://testnet.archiescan.io/"],
   },
@@ -19,16 +19,19 @@ const networks = {
 const changeNetwork = async ({ networkName }) => {
   try {
     if (!window.ethereum) throw new Error("No crypto wallet found");
+    const web3 = window.web3;
     await window.ethereum.request({
-      method: "wallet_addEthereumChain",
-      params: [
-        {
-          ...networks[networkName]
-        },
-      ],
+      method: 'wallet_switchEthereumChain',
+      params: [{ chainId: web3.utils.toHex(1244) }]
     });
+    window.location.reload();
+
+
+
+
+
   } catch (err) {
-    console.log("not found", err);
+    console.log(err, "not found");
   }
 };
 const handleNetworkSwitch = async (networkName) => {
